@@ -2,6 +2,7 @@
   "name": "portfolio-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://korrollir.github.io/portfolio",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
