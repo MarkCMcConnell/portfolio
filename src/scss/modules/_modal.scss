@@ -1,0 +1,67 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 500px;
+  min-width: 300px;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $white;
+  color: $gray;
+
+  @include atXLarge {
+    width: 40rem;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($black, 0.6);
+    padding: 50px;
+  }
+
+  &__container {
+    max-height: 500px;
+    max-width: 300px;
+  }
+
+  &__title {
+    text-align: center;
+    color: $dark-gray;
+    margin: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 1px;
+      background-color: $accent;
+      margin: 1rem auto;
+    }
+  }
+
+  &__description {
+    @include atXLarge {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  &__link {
+    color: $accent;
+  }
+
+  &__icon {
+    padding-right: 1rem;
+    color: $dark-gray;
+  }
+}

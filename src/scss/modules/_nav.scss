@@ -1,0 +1,96 @@
+.nav {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 3rem;
+  background-color: $white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  
+  @include atXLarge {
+    height: 4rem;
+  }
+
+  &__desktop {
+    display: none;
+
+    @include atXLarge {
+      width: 100%;
+      height: 4rem;
+      display: block;
+    }
+  }
+
+  &__desktopLinks {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* Hamburger button and transition from
+  Brad Schiff - Udemy Git a Web Developer Job: Modern Workflow*/
+  &__mobile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @mixin atXLarge {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: $medium;
+    cursor: pointer;
+
+    @include atXLarge {
+      display: none;
+    }
+  }
+  
+  &__navLinks {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    width: 0;
+    height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $dark-gray;
+    font-size: 0;
+    transition: all .4s ease;
+
+    @include atXLarge {
+      display: none;
+    }
+
+    &--visible {
+      width: 60vw;
+      padding: 20% 0;
+      font-size: $regular;
+
+      @include atMedium {
+        font-size: 1.5rem;
+        width: 30vw;
+      }
+    }
+  }
+
+  &__navLink {
+    color: $white;
+    text-decoration: none;
+
+    @include atXLarge {
+      color: $dark-gray;
+      font-size: 1.25rem;
+      flex: 1;
+    }
+  }
+}

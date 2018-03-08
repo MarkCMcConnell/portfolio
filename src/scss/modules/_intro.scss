@@ -1,0 +1,80 @@
+.intro {
+  width: 100%;
+  display: flex;
+  // flex: 1;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 40rem) minmax(2rem, 1fr);
+
+    @include atXLarge {
+      grid-template-columns: minmax(2rem, 1fr) minmax(auto, 60rem) minmax(2rem, 1fr);
+      line-height: 1.7;
+    }
+  }
+
+  &__center {
+    background-color: $dark-gray;
+    color: rgba($white, 0.8);
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    order: 2;
+
+    @supports (display: grid) {
+      grid-column: 2 / 3;
+    }
+
+    @include atMedium {
+      flex: 1;
+    }
+
+    @include atXLarge {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    & h1 {
+      color: $white;
+      text-align: center;
+
+      @include atXLarge {
+        margin: 0;
+        padding-bottom: 1.5rem;
+      }
+    }
+
+    & p {
+      @include atXLarge {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  &__left,
+  &__right {
+    background-color: $accent;
+    flex: 1;
+
+    @include atMedium {
+      flex-grow: 2;
+    }
+  }
+
+  &__left {
+    order: 1;
+
+    @supports (display: grid) {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__right {
+    order: 3;
+
+    @supports (disiplay: grid) {
+      grid-column: 3 / 3;
+    }
+  }
+}

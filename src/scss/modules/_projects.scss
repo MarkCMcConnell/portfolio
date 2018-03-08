@@ -1,0 +1,30 @@
+.projects {
+  background-color: $dark-gray;
+
+  &__title {
+    color: $white;
+    margin: 0;
+    padding: 1rem .5rem;
+
+    @include atXLarge {
+      font-size: $large;
+      text-align: center;
+      padding: 4rem .5rem;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .projects {
+    @include atXLarge {
+      padding-bottom: 2rem;
+
+    &__grid {
+      margin: 0 auto;
+      width: 80rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    }
+  }
+}

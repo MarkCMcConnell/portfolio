@@ -1,0 +1,98 @@
+// TODO: Fix alignment of the paragraphs in relation to the image/titles
+// Likely need to eliminate grid or refactor the React code
+.bio {
+  @include container;
+  @include clearfix;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  &__title {
+    font-size: 2.5em;
+  }
+
+  &__subtitle {
+    margin: .75rem 0;
+  }
+
+  &__text {
+    padding: 0.25em 0;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .bio {
+    display: grid;
+    grid-template-columns: [bio-start] minmax(6rem, 1fr) [name-start] minmax(6rem, 1fr) [img-end] 2fr [bio-end];
+
+    @include atLarge {
+      grid-template-columns: [bio-start] minmax(6rem, 1fr) [name-start] minmax(6rem, 1fr) [bio-end];
+    }
+
+    
+    &__image {
+      grid-column: bio / img;
+      grid-row: 1 / 2;
+
+      @include atLarge {
+        grid-row: 1 / span 3;
+        justify-self: left;
+        padding-bottom: 1rem;
+      }
+
+      @include atXLarge {
+        align-self: center;
+      }
+    }
+    
+    &__title {
+      align-self: end;
+      grid-column:  name / img;
+      grid-row: 1 / 2;
+
+      @include atLarge {
+        grid-column: name / bio;
+        grid-row: 1 / 2;
+        font-size: $large;
+        justify-self: left;
+        align-self: end;
+      }
+    }
+
+    &__subtitle {
+      grid-row: 2 / 3;
+      grid-column: bio / bio;
+
+      @include atLarge {
+        grid-column: name / bio;
+        grid-row: 2 / 3;
+        justify-self: left;
+      }
+    }
+
+    &__text {
+      grid-row: 3 / 4;
+      grid-column: bio / bio;
+
+      @include atLarge {
+        grid-column: bio / bio;
+        width: 60%;
+        justify-self: center;
+      }
+
+      @include atXLarge {
+        grid-row: 3 / 4;
+        grid-column: 2 / 2;
+        justify-self: center;
+        width: 100%;
+      }
+    }
+
+    &__text p {
+      padding-bottom: .75rem;
+    }
+  }
+}

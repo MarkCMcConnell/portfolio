@@ -1,0 +1,42 @@
+.project {
+  width: 95%;
+  padding-bottom: .5rem;
+  margin: 0 auto;
+
+  @include atMedium {
+    width: 70%;
+  }
+
+  &__card {
+    background-color: $white;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include atMedium {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__details {
+    width: 100%;
+    padding: .5rem;
+    align-self: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    @include font-style($font-size: $medium, $color: $accent);
+  }
+
+  &__description {
+    @include font-style($font-size: $regular, $color: $dark-gray);
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+  }
+}

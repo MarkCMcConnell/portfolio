@@ -1,0 +1,9 @@
+.list {
+
+  &__item {
+    display: block;
+    padding: 0.5em 0;
+    font-size: $regular;
+    font-family: $ff-sans-serif;
+  }
+}

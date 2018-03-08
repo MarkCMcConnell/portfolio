@@ -1,0 +1,56 @@
+@mixin font-style($font-size, $color: $gray, $font-family: $ff-serif,  $font-weight: 400, $line-height: 1, $letter-spacing: 0.6em) {
+  font-size: $font-size;
+  color: $color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+@mixin container($width: 95%, $max-width: 1000px, $margin: 0 auto) {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@mixin centered($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin transition($style, $time, $type) {
+  transition: $style $time $type
+}
+
+// Landscape view small tablets and large phones
+@mixin atSmall {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+// Portrait view small tablets
+@mixin atMedium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+// Tablets and small monitors
+@mixin atLarge {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+// Large tablets and monitors
+@mixin atXLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  height: 98vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__left {
+    position: absolute;
+    left: -50%;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($gray,0.3);
+    transform: skewx(-30deg);
+  }
+
+  &__right {
+    position: absolute;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($dark-gray, 0.3);
+    transform: skewX(-30deg);
+  }
+
+  &__card {
+    @include centered(50%, 50%);
+    width: 90%;
+    height: 40%;
+    background-color: $white;
+
+    @include atMedium {
+      width: 60%;
+    }
+
+    @include atXLarge {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 100%;
+    color: $dark-gray;
+    text-align: center;
+    font-size: 1.5rem;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      margin: 0 auto 2rem;
+      width: 60%;
+      height: 1px;
+      background-color: $black;
+    }
+
+    &::after {
+      margin: 1.5rem auto 0;
+    }
+
+    @include atMedium {
+      font-size: $medium;
+    }
+  }
+
+  &__greeting {
+    display: block;
+    @include font-style($color: $accent, $font-family: $ff-serif, $font-size: 2.5em);
+  }
+}
