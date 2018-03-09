@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio",
-  "name": "Mark McConnell Portfolio Page",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
