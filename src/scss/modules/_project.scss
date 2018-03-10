@@ -7,6 +7,10 @@
     width: 70%;
   }
 
+  @include atXLarge {
+    width: 95%;
+  }
+
   &__card {
     background-color: $white;
     margin-bottom: .5rem;
