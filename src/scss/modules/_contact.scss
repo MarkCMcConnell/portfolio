@@ -5,5 +5,13 @@
 
   &__title {
     text-align: center;
+
+    @include atXLarge {
+      margin: 0;
+    }
+  }
+
+  @include atXLarge {
+    padding: 2rem 0;
   }
 }

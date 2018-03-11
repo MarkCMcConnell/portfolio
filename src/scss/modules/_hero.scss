@@ -76,5 +76,13 @@
   &__greeting {
     display: block;
     @include font-style($color: $accent, $font-family: $ff-serif, $font-size: 2.5em);
+
+    @include atLarge {
+      line-height: 1.2;
+    }
+
+    @include atXLarge {
+      line-height: 1.5;
+    }
   }
 }

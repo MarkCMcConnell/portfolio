@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   min-height: 500px;
   min-width: 300px;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,10 @@
   justify-content: space-around;
   background-color: $white;
   color: $gray;
+
+  @include atLarge {
+    width: 30rem;
+  }
 
   @include atXLarge {
     width: 40rem;
@@ -28,10 +32,10 @@
     padding: 50px;
   }
 
-  &__container {
-    max-height: 500px;
-    max-width: 300px;
-  }
+  // &__container {
+  //   max-height: 500px;
+  //   max-width: 300px;
+  // }
 
   &__title {
     text-align: center;
@@ -47,9 +51,21 @@
       background-color: $accent;
       margin: 1rem auto;
     }
+
+    @include atXLarge {
+      font-size: $large;
+    }
   }
 
   &__description {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @include atLarge {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
     @include atXLarge {
       padding-left: 5rem;
       padding-right: 5rem;
