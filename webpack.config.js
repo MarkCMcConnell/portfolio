@@ -114,7 +114,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       template: './public/index.html',
       filename: './index.html'
     }),

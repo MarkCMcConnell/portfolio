@@ -3,7 +3,7 @@ export const projects = [
     title: 'Oil My Life',
     description: `Oil My Life is a blog app I built for my wife. The blog was designed mobile first and contains user authentication, authorization, and database integration. 
     Future plans include a landing page to provide information to the user about essential oils and Young Living.`,
-    image: 'http://via.placeholder.com/600x400',
+    image: 'images/oilmylife.jpg',
     alt: 'A screenshot of the Oil My Life app',
     technologies: 'Express, MongoDB, Postcss, Gulp',
     liveLink: 'http://oilmylife.org',
@@ -13,7 +13,7 @@ export const projects = [
   {
     title: 'Daycare Log',
     description: 'description here',
-    image: 'http://via.placeholder.com/600x400',
+    image: 'images/daycarelog.jpg',
     alt: 'A screenshot of the Daycare Log app',
     technologies: 'React, Express, Webpack',
     liveLink: 'http://daycare-log.herokuapp.com',
@@ -23,7 +23,7 @@ export const projects = [
   {
     title: 'Portfolio',
     description: 'description here',
-    image: 'http://via.placeholder.com/600x400',
+    image: 'images/portfolio.jpg',
     alt: 'A screenshot of the Portfolio Page',
     technologies: 'React, SASS, create-react-app',
     liveLink: 'https://korrollir.github.io',
@@ -33,7 +33,7 @@ export const projects = [
   {
     title: 'fCC Simon Game',
     description: 'description here',
-    image: 'http://via.placeholder.com/600x400',
+    image: 'images/simon.jpg',
     alt: 'A screenshot of the Simon Game',
     technologies: 'jQuery, Pug, SASS',
     liveLink: 'https://codepen.io/mcmcconn/full/KqyzZp/',
