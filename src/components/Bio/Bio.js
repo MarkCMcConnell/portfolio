@@ -6,11 +6,16 @@ import { bio } from '../../data/bio'
 const Bio = () => {
   return (
     <section className='bio' id='about'>
-      <img
-        className='bio__image'
-        src='http://via.placeholder.com/400x600'
-        alt='A shot of Mark McConnell'
-      />
+      <picture className='bio__image'>
+        <img
+          srcset='images/profilepic.jpg 256px,
+                  images/profilepiclarge.jpg 400px'
+          sizes='256px,
+                 768px'
+          src='images/profilepiclarge.jpg'
+          alt='Mark McConnell'
+        />
+      </picture>
       <h1 className='bio__title'>
         Mark McConnell
       </h1>

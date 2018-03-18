@@ -15,7 +15,6 @@ class ContactForm extends Component {
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleInputChange (e) {
@@ -25,13 +24,12 @@ class ContactForm extends Component {
     this.setState({ [name]: value })
   }
 
-  handleSubmit () {
-
-  }
-
   render () {
     return (
-      <form className='contactForm' onSubmit={this.handleSubmit}>
+      <form className='contactForm'
+        action='https://formspree.io/mcmcconn@gmail.com'
+        method='POST'
+      >
         <ContactField
           className='contactField contactField__grid1'
           type='text'

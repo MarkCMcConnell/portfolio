@@ -21,12 +21,14 @@ class Project extends Component {
   }
 
   render () {
-    const { title, image, alt, technologies } = this.props
+    const { title, image, liveLink, alt, technologies } = this.props
 
     return (
       <section className='project'>
         <figure className='project__card'>
-          <img className='project__image' src={image} alt={alt} />
+          <a href={liveLink}>
+            <img className='project__image' src={image} alt={alt} />
+          </a>
           <figcaption className='project__details'>
             <h3 className='project__title'>{title}</h3>
             <p className='project__description'>
