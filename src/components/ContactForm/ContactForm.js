@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ContactField from '../ContactField/ContactField'
 import ContactMessage from '../ContactMessage/ContactMessage'
 import Button from '../Button/Button'
+import FormError from '../FormError/FormError'
 
 class ContactForm extends Component {
   constructor () {
@@ -11,7 +12,9 @@ class ContactForm extends Component {
       name: '',
       email: '',
       subject: '',
-      message: 'Enter your message here'
+      message: 'Enter your message here',
+      emailValid: false,
+      formValid: false
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -22,6 +25,11 @@ class ContactForm extends Component {
     const value = e.target.value
 
     this.setState({ [name]: value })
+  }
+
+  valdiateEmail () {
+    let emailValid = this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    this.setState({emailValid: emailValid})
   }
 
   render () {
@@ -49,7 +57,12 @@ class ContactForm extends Component {
           onChange={this.handleInputChange}
         />
         <ContactMessage onChange={this.handleInputChange} />
-        <Button className='btn contactForm__btn' type='submit' text='Send' />
+        <Button
+          className='btn contactForm__btn'
+          type='submit'
+          disabled={!this.state.formValid}
+          text='Send'
+        />
       </form>
     )
   }

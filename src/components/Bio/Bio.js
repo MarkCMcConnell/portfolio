@@ -4,18 +4,17 @@ import React from 'react'
 import { bio } from '../../data/bio'
 
 const Bio = () => {
+  const large = 'images/profilepiclarge.jpg'
+  const small = 'images/profilepic.jpg'
+  const alt = 'Mark McConnell'
+  const className = 'bio__image'
+
   return (
     <section className='bio' id='about'>
-      <picture className='bio__image'>
-        <img
-          srcset='images/profilepic.jpg 256px,
-                  images/profilepiclarge.jpg 400px'
-          sizes='256px,
-                 768px'
-          src='images/profilepiclarge.jpg'
-          alt='Mark McConnell'
-        />
-      </picture>
+      {window.innerWidth > 768
+        ? <img className={className} src={large} alt={alt} />
+        : <img className={className} src={small} alt={alt} />
+      }
       <h1 className='bio__title'>
         Mark McConnell
       </h1>
