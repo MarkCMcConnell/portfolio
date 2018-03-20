@@ -24,12 +24,15 @@ class ContactForm extends Component {
     const name = e.target.name
     const value = e.target.value
 
-    this.setState({ [name]: value })
+    this.setState({ [name]: value },
+      () => { this.valdiateEmail(value) })
   }
 
-  valdiateEmail () {
-    let emailValid = this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
-    this.setState({emailValid: emailValid})
+  valdiateEmail (value) {
+    let isEmailValid = this.state.emailValid
+
+    isEmailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    this.setState({emailValid: isEmailValid})
   }
 
   render () {

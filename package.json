@@ -2,7 +2,7 @@
   "name": "portfolio-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://korrollir.github.io/portfolio ",
+  "homepage": "https://korrollir.github.io/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --env development --progress --colors",
