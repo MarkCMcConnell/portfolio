@@ -24,15 +24,22 @@ class ContactForm extends Component {
     const name = e.target.name
     const value = e.target.value
 
-    this.setState({ [name]: value },
-      () => { this.valdiateEmail(value) })
+    if (name === 'email') {
+      this.setState({ [name]: value },
+        () => { this.valdiateEmail(value) })
+    } else {
+      this.setState({ [name]: value })
+    }
   }
 
   valdiateEmail (value) {
     let isEmailValid = this.state.emailValid
 
     isEmailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
-    this.setState({emailValid: isEmailValid})
+    this.setState({
+      emailValid: isEmailValid,
+      formValid: true
+    })
   }
 
   render () {
@@ -43,18 +50,22 @@ class ContactForm extends Component {
       >
         <ContactField
           className='contactField contactField__grid1'
+          name='name'
           type='text'
           placeholder='Name'
           onChange={this.handleInputChange}
         />
         <ContactField
           className='contactField contactField__grid2'
+          name='email'
           type='email'
           placeholder='Email'
           onChange={this.handleInputChange}
         />
+        {this.state.emailValid && <FormError />}
         <ContactField
           className='contactField contactField__grid3'
+          name='subject'
           type='text'
           placeholder='Subject'
           onChange={this.handleInputChange}
