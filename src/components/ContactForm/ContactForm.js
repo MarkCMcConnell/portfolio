@@ -24,18 +24,14 @@ class ContactForm extends Component {
     const name = e.target.name
     const value = e.target.value
 
-    if (name === 'email') {
-      this.setState({ [name]: value },
-        () => { this.valdiateEmail(value) })
-    } else {
-      this.setState({ [name]: value })
-    }
+    this.setState({ [name]: value })
   }
 
-  valdiateEmail (value) {
-    let isEmailValid = this.state.emailValid
-
-    isEmailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+  valdiateEmail (e) {
+    let email = e.target.value
+    console.log(email)
+    let isEmailValid = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    console.log(isEmailValid)
     this.setState({
       emailValid: isEmailValid,
       formValid: true
@@ -61,6 +57,7 @@ class ContactForm extends Component {
           type='email'
           placeholder='Email'
           onChange={this.handleInputChange}
+          onBlur={this.validateEmail}
         />
         {this.state.emailValid && <FormError />}
         <ContactField

@@ -17,13 +17,18 @@ class NavBar extends Component {
   }
 
   render () {
-    const links = ['Home', 'About', 'Projects', 'Contact']
+    const links = [
+      {section: 'Home', position: 0},
+      {section: 'About', position: this.props.bioScrollPos},
+      {section: 'Projects', position: this.props.projectsScrollPos},
+      {section: 'Contact', position: this.props.contactScrollPos}
+    ]
 
     return (
-      <nav className='nav'>
+      <nav className='nav' ref={this.props.navRef}>
         <div className='nav__desktop'>
           <ul className='nav__desktopLinks'>
-            {links.map(link => <NavLink className='nav__navLinks' key={link} link={link} />)}
+            {links.map(link => <NavLink className='nav__navLinks' key={link.position} link={link} />)}
           </ul>
         </div>
         <div className='nav__mobile' onClick={this.toggleMobileMenu}>
@@ -33,7 +38,7 @@ class NavBar extends Component {
               ? 'nav__navLinks nav__navLinks--visible'
               : 'nav__navLinks'}
           >
-            {links.map(link => <NavLink key={link} link={link} />)}
+            {links.map(link => <NavLink key={link.position} link={link} />)}
           </ul>
         </div>
       </nav>

@@ -9,39 +9,53 @@ import Contact from './Contact/Contact'
 import Footer from './Footer/Footer'
 
 class App extends Component {
-  /* TODO: Set active class in Nav onScroll */
-  // constructor () {
-  //   super()
+  constructor () {
+    super()
 
-  //   this.state = {
-  //     windowYPosition: null,
-  //     active: true
-  //   }
+    this.state = {
+      navHeight: 0,
+      introScrollPos: 0,
+      bioScrollPos: 0,
+      projectsScrollPos: 0,
+      contactScrollPos: 0
+    }
+  }
 
-  //   this.handleScroll = this.handleScroll.bind(this)
-  // }
+  componentDidMount () {
+    const navHeight = this.nav.offsetHeight
 
-  // componentDidMount () {
-  //   window.addEventListener('scroll', this.handleScroll)
-  // }
-
-  // componentWillUnmount () {
-  //   window.removeEventListener('scroll', this.handleScroll)
-  // }
-
-  // handleScroll () {
-
-  // }
+    this.setState({
+      navHeight: navHeight,
+      introScrollPos: this.introSection.offsetTop + navHeight,
+      bioScrollPos: this.bioSection.offsetTop + navHeight,
+      projectsScrollPos: this.projectsSection.offsetTop + navHeight,
+      contactScrollPos: this.contactSection.offsetTop + navHeight
+    })
+  }
 
   render () {
     return (
       <div>
-        <NavBar />
+        <NavBar
+          navRef={el => this.nav = el}
+          intro={this.state.introScrollPos}
+          bio={this.state.bioScrollPos}
+          projects={this.state.projectsScrollPos}
+          contact={this.state.contactScrollPos}
+        />
         <Hero />
-        <Intro />
-        <Bio />
-        <Projects />
-        <Contact />
+        <Intro 
+          introRef={section => this.introSection = section}
+        />
+        <Bio 
+          bioRef={section => this.bioSection = section}
+        />
+        <Projects 
+          projectsRef={section => this.projectsSection = section}
+        />
+        <Contact 
+          contactRef={section => this.contactSection = section}  
+        />
         <Footer />
       </div>
     )

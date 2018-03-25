@@ -3,14 +3,14 @@ import React from 'react'
 /* Import the bio text from a data file */
 import { bio } from '../../data/bio'
 
-const Bio = () => {
+const Bio = (props) => {
   const large = 'images/profilepiclarge.jpg'
   const small = 'images/profilepic.jpg'
   const alt = 'Mark McConnell'
   const className = 'bio__image'
 
   return (
-    <section className='bio' id='about'>
+    <section className='bio' id='about' ref={props.bioRef}>
       {window.innerWidth > 768
         ? <img className={className} src={large} alt={alt} />
         : <img className={className} src={small} alt={alt} />
