@@ -14,11 +14,9 @@ This is a recreation and design update for my personal portfolio page.  The page
 
 This project requires NodeJs at least `v8.7.0` and npm `5.6.0` to guarantee the code will run as is.
 
-End with an example of getting some data out of the system or using it for a little demo
+## Running tests
 
-## Running the tests
-
-Testing is not included in this app.  Feel free to add your own test suite and modify the `package.json` script `lint` to enable your tests.
+Testing is not included in this app as of yet.  Feel free to add your own test suite and modify the `package.json` script `lint` to enable your tests.
 
 ## Deployment
 
